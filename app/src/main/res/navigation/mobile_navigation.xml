@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_main">
+
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.example.anketa.screen.main.ListFragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_to_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_detail"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.example.anketa.screen.main.MainFragment"
+        android:label="@string/title_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/navigation_login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_login"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_detail"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_list"
+            app:destination="@id/navigation_list"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_list"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_responses"
+        android:name="com.example.anketa.screen.responses.ResponsesFragment"
+        tools:layout="@layout/fragment_responses" >
+        <action
+            android:id="@+id/action_to_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_detail"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.anketa.screen.detail.DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_to_profile_employer"
+            app:destination="@id/navigation_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_profile_employer"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="previousDestinationId"
+            app:argType="integer" />
+        <argument
+            android:name="isLiked"
+            app:argType="boolean" />
+        <argument
+            android:name="vacancy"
+            app:argType="com.example.anketa.model.Vacancy"
+            app:nullable="true" />
+        <argument
+            android:name="model"
+            app:argType="com.example.anketa.model.BaseModel"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile_employer"
+        android:name="com.example.anketa.screen.profile.employer.ProfileEmployerFragment"
+        tools:layout="@layout/fragment_profile_employer">
+        <action
+            android:id="@+id/action_profile_employer_to_edit_profile_employer"
+            app:destination="@id/navigation_edit_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_edit_profile_employer"
+            app:popUpToInclusive="true" />
+
+
+        <action
+            android:id="@+id/action_profile_employer_to_vacancy"
+            app:destination="@id/navigation_vacancy"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_vacancy"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_to_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_detail"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="motionProgress"
+            android:defaultValue="0"
+            app:argType="float" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_vacancy"
+        android:name="com.example.anketa.screen.profile.employer.VacancyFragment"
+        tools:layout="@layout/fragment_vacancy">
+
+        <action
+            android:id="@+id/action_to_profile"
+            app:destination="@id/navigation_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_profile_employer"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="vacancy"
+            app:argType="com.example.anketa.model.Vacancy"
+            app:nullable="false" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_edit_profile_employer"
+        android:name="com.example.anketa.screen.profile.employer.EditProfileEmployerFragment"
+        tools:layout="@layout/fragment_edit_profile_employer">
+        <argument
+            android:name="isLogin"
+            android:defaultValue="false"
+            app:argType="boolean"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/navigation_main"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/navigation_login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_login"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_edit_profile_employer"
+            app:destination="@id/navigation_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_profile_employer"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit_profile_employee"
+        android:name="com.example.anketa.screen.profile.employee.EditProfileEmployeeFragment"
+        tools:layout="@layout/fragment_edit_profile_employee">
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/navigation_main"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/navigation_login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_login"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="isLogin"
+            android:defaultValue="false"
+            app:argType="boolean"
+            app:nullable="false" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.anketa.screen.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/navigation_main"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_edit_profile_employer"
+            app:destination="@id/navigation_edit_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_edit_profile_employer"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_edit_profile_employee"
+            app:destination="@id/navigation_edit_profile_employee"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_edit_profile_employee"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

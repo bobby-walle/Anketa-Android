@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/title_working_conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/title_detail_working_conditions" />
+
+    <ImageView
+        android:id="@+id/img_working_conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/scale_1" />
+
+    <TextView
+        android:id="@+id/title_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/title_detail_salary"
+        />
+
+    <ImageView
+        android:id="@+id/img_working_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/scale_2" />
+
+    <TextView
+        android:id="@+id/title_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/title_schedule"
+        />
+
+    <ImageView
+        android:id="@+id/img_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/scale_3" />
+
+    <TextView
+        android:id="@+id/title_management"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/title_management"
+        />
+
+    <ImageView
+        android:id="@+id/img_management"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/scale_4" />
+
+</LinearLayout>

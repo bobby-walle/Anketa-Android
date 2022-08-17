@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardOne"
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_height_smaller"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerCardOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_like_viewpager"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                tools:listitem="@layout/item_rv_viewpager" />
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_like_viewpager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabIconTint="@color/white"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="@dimen/_10sdp" />
+
+            <ImageView
+                android:id="@+id/img_rating_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/rating_circle"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_like_viewpager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_like_viewpager" />
+
+            <TextView
+                android:id="@+id/txt_rating_profile"
+                style="@style/CustomTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/img_rating_profile"
+                app:layout_constraintEnd_toEndOf="@+id/img_rating_profile"
+                app:layout_constraintStart_toStartOf="@+id/img_rating_profile"
+                app:layout_constraintTop_toTopOf="@+id/img_rating_profile" />
+
+            <include
+                android:id="@+id/employer_card"
+                layout="@layout/employer_card_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_like_viewpager"
+                app:layout_constraintVertical_bias="0" />
+
+            <include
+                android:id="@+id/employee_card"
+                layout="@layout/employee_card_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_like_viewpager"
+                app:layout_constraintVertical_bias="0" />
+
+            <ImageView
+                android:id="@+id/employer_img_rating_friends"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:src="@drawable/avatars1"
+                app:layout_constraintBottom_toTopOf="@+id/btn_detail"
+                app:layout_constraintDimensionRatio="1:0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/employer_data_friends"
+                app:layout_constraintTop_toBottomOf="@+id/employer_card"
+                app:layout_constraintWidth_percent="0.35" />
+
+            <TextView
+                android:id="@+id/employer_title_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/title_friends"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintBottom_toBottomOf="@+id/employer_img_rating_friends"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/employer_img_rating_friends" />
+
+            <TextView
+                android:id="@+id/employer_data_friends"
+                style="@style/CustomTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="+74"
+                app:layout_constraintBottom_toBottomOf="@+id/employer_img_rating_friends"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/employer_title_friends"
+                app:layout_constraintTop_toTopOf="@+id/employer_img_rating_friends"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_like"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:backgroundTint="@color/green_main"
+                android:contentDescription="TODO"
+                android:fontFamily="@font/inter_black"
+                android:text="@string/btn_like"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="TODO"
+                android:fontFamily="@font/inter_black"
+                android:text="@string/btn_detail"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/green_main"
+                app:icon="@drawable/ic_chevron_right"
+                app:iconGravity="end"
+                app:iconSize="@dimen/_8sdp"
+                app:iconTint="@android:color/transparent"
+                app:iconTintMode="src_over"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline_vertical" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

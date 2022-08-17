@@ -1,0 +1,22 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="card_width">@dimen/_270sdp</dimen>
+    <dimen name="card_height">@dimen/_400sdp</dimen>
+    <dimen name="card_height_smaller">@dimen/_370sdp</dimen>
+    <dimen name="profile_image_square">@dimen/_82sdp</dimen>
+    <dimen name="edit_txt_border_radius">@dimen/_32sdp</dimen>
+    <dimen name="card_corner_radius">@dimen/_16sdp</dimen>
+
+    <dimen name="text_huge">@dimen/_18ssp</dimen>
+    <dimen name="text_large">@dimen/_16ssp</dimen>
+    <dimen name="text_big">@dimen/_11ssp</dimen>
+    <dimen name="text_medium">@dimen/_10ssp</dimen>
+
+    <dimen name="btn_corner_radius">@dimen/_32sdp</dimen>
+    <dimen name="btn_height">@dimen/_44sdp</dimen>
+
+    <dimen name="one_button">@dimen/_76sdp</dimen>
+    <dimen name="two_buttons">@dimen/_136sdp</dimen>
+</resources>

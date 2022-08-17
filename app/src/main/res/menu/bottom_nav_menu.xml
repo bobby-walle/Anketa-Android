@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_main"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_main" />
+
+    <item
+        android:id="@+id/navigation_responses"
+        android:icon="@drawable/ic_tick"
+        android:title="@string/title_responses" />
+
+    <item
+        android:id="@+id/navigation_profile_employer"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/title_profile" />
+
+</menu>

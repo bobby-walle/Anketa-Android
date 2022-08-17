@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/startMain">
+        <Constraint android:id="@id/cardOne">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/card_corner_radius" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="15" />
+        </Constraint>
+
+        <Constraint android:id="@id/cardTwo">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/card_corner_radius" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="10" />
+        </Constraint>
+
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_48sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/card_corner_radius" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="5" />
+            <PropertySet
+                android:alpha="0"
+                android:visibility="gone" />
+        </Constraint>
+        <Constraint android:id="@+id/btn_list">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+        <Constraint android:id="@+id/btn_swipes">
+            <PropertySet android:visibility="gone" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/startToLeft"
+        app:constraintSetEnd="@+id/offScreenUnlike"
+        app:constraintSetStart="@+id/startMain">
+        <OnSwipe
+            app:dragDirection="dragLeft"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/cardOne"
+            app:touchAnchorSide="middle"
+            app:touchRegionId="@id/cardOne" />
+        <KeyFrameSet>
+            <!--            <KeyAttribute-->
+            <!--                android:rotationY="-2"-->
+            <!--                app:motionTarget="@id/cardOne"-->
+            <!--                app:framePosition="70"-->
+            <!--                />-->
+            <KeyPosition
+                app:framePosition="25"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/cardOne"
+                app:percentY="0.05" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet
+        android:id="@+id/offScreenUnlike"
+        app:deriveConstraintsFrom="@id/startMain">
+        <Constraint android:id="@id/cardOne">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                app:layout_constraintEnd_toStartOf="parent" />
+        </Constraint>
+        <Constraint android:id="@id/cardTwo">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="15" />
+        </Constraint>
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="10" />
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/startToRight"
+        app:constraintSetEnd="@+id/offScreenLike"
+        app:constraintSetStart="@+id/startMain">
+        <OnSwipe
+            app:dragDirection="dragRight"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/cardOne"
+            app:touchAnchorSide="middle"
+            app:touchRegionId="@id/cardOne" />
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="25"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/cardOne"
+                app:percentY="-0.05" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet
+        android:id="@+id/offScreenLike"
+        app:deriveConstraintsFrom="@id/startMain">
+        <Constraint android:id="@id/cardOne">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                app:layout_constraintStart_toEndOf="parent" />
+        </Constraint>
+        <Constraint android:id="@id/cardTwo">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="15" />
+        </Constraint>
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="10" />
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/listMode"
+        app:deriveConstraintsFrom="@id/startMain">
+        <Constraint android:id="@id/cardOne">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+        <Constraint android:id="@id/cardTwo">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_48sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+            <PropertySet
+                android:alpha="0"
+                android:visibility="gone" />
+        </Constraint>
+        <Constraint android:id="@+id/btn_list">
+            <PropertySet android:visibility="gone" />
+        </Constraint>
+        <Constraint android:id="@+id/btn_swipes">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>

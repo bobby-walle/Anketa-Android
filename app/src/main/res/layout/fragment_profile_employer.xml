@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?actionBarSize"
+        app:layoutDescription="@xml/fragment_profile_employer_scene"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_profile_employer"
+            android:layout_width="@dimen/card_width"
+            android:layout_height="@dimen/card_height_smaller"
+            app:layout_constraintHeight_percent="0.55"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_like_viewpager"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    app:layout_constraintBottom_toBottomOf="@+id/rv_like_viewpager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMaxWidth="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/img_rating_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_like_viewpager"
+                    app:layout_constraintBottom_toBottomOf="@+id/rv_like_viewpager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/rating_circle"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txt_rating_profile"
+                    style="@style/CustomTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.8"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_rating_profile"
+                    app:layout_constraintEnd_toEndOf="@+id/img_rating_profile"
+                    app:layout_constraintStart_toStartOf="@+id/img_rating_profile"
+                    app:layout_constraintTop_toTopOf="@+id/img_rating_profile" />
+
+                <TextView
+                    android:id="@+id/employee_title_position"
+                    style="@style/CustomTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="Cristal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_like_viewpager"
+                    app:layout_constraintVertical_bias="0" />
+
+                <TextView
+                    android:id="@+id/employee_title_name"
+                    style="@style/CustomStandartText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Санкт-Петербург, Загородный проспект, 60"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@+id/employee_title_position"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_title_position"
+                    app:layout_constraintVertical_bias="0" />
+
+                <TextView
+                    android:id="@+id/employee_title_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/title_reviews"
+                    android:textSize="@dimen/text_big"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@+id/employee_title_position"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_title_name" />
+
+                <TextView
+                    android:id="@+id/employee_data_city"
+                    style="@style/CustomTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="245"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toEndOf="@+id/employee_title_city"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_title_name"
+                    app:layout_constraintVertical_bias="0" />
+
+                <TextView
+                    android:id="@+id/employee_title_salary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/title_friends"
+                    android:textSize="@dimen/text_big"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@+id/employee_title_position"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_title_city"
+                    app:layout_constraintVertical_bias="0" />
+
+                <TextView
+                    android:id="@+id/employer_data_friends"
+                    style="@style/CustomTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="+74"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toEndOf="@+id/employee_title_salary"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_title_city"
+                    app:layout_constraintVertical_bias="0" />
+
+                <ImageView
+                    android:id="@+id/img_rating_profile_friends"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:src="@drawable/avatars1"
+                    app:layout_constraintBottom_toTopOf="@+id/employer_data_friends"
+                    app:layout_constraintDimensionRatio="1:0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toEndOf="@+id/employer_data_friends"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_data_city"
+                    app:layout_constraintVertical_bias="0.35"
+                    app:layout_constraintWidth_percent="0.35"
+                    tools:ignore="ContentDescription" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_edit"
+                    style="@style/CustomButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:text="@string/btn_edit"
+                    android:textColor="@color/green_main"
+                    app:icon="@drawable/ic_pencil"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@android:color/transparent"
+                    app:iconTintMode="src_over"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_like_viewpager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    app:layout_constraintVertical_bias="1"
+                    android:paddingStart="@dimen/_30sdp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_profile_employer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_profile_employer"
+            tools:itemCount="3"
+            tools:listitem="@layout/vacancy_card" />
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>

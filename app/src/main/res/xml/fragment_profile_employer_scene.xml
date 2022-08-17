@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <ConstraintSet
+        android:id="@+id/startMain"
+        />
+
+    <ConstraintSet
+        android:id="@+id/end"
+        app:deriveConstraintsFrom="@id/startMain">
+        <Constraint
+            android:id="@id/card_profile_employer"
+            android:layout_width="@dimen/card_width"
+            android:layout_height="@dimen/card_height_smaller"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <Constraint
+            android:id="@id/recycler_profile_employer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@id/startMain"
+        app:duration="1000">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:onTouchUp="autoCompleteToEnd"
+            app:touchAnchorId="@id/recycler_profile_employer"
+            app:touchAnchorSide="top"
+            app:touchRegionId="@id/recycler_profile_employer"
+            motion:maxAcceleration="20"
+            motion:maxVelocity="20" />
+    </Transition>
+</MotionScene>
