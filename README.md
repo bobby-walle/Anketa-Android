@@ -1,4 +1,4 @@
-# Anketa
+# Questionnaire
 ## Стек
 - MVVM
 - Single Activity
