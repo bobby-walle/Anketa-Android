@@ -2,9 +2,6 @@
 
 # Anketa
 
-https://user-images.githubusercontent.com/79411173/191229132-5221c123-b2ae-4202-8d77-f94af7c3a276.mp4
-
-
 ## Стек
 - MVVM
 - Single Activity
