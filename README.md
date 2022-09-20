@@ -1,9 +1,13 @@
+# Прототип tinder-like андроид приложения для поиска работника/работы
+
 # Anketa
 ## Стек
 - MVVM
 - Single Activity
 - Navigation Components
 - LiveData
+
+https://user-images.githubusercontent.com/79411173/191228774-8a341596-bde9-46af-b355-614624ad0317.mp4
 
 ### Данные с работодателями/работниками
 Данные о работодателях/работниках инициализируются в классе ```CardsViewModel``` пакета ```viewmodel```. 
